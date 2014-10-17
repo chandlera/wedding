@@ -6,6 +6,10 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/clock', function(req, res) {
+  res.render('clock', { title: 'SVG Clock' });
+});
+
 // /* GET New User page. */
 // router.get('/newuser', function(req, res) {
 //     res.render('newuser', { title: 'Add New User' });
