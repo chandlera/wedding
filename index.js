@@ -37,6 +37,10 @@ new compressor.minify({
 });
 
 app.get('/', routes.index);
+app.get('/venue', routes.venue);
+app.get('/events', routes.weddingEvents);
+app.get('/registry', routes.registry);
+app.get('/engagement', routes.engagement);
 
 http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));

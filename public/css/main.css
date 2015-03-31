@@ -1,12 +1,23 @@
+* {
+	box-sizing: border-box;
+}
+
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
 html {
 	font-family: sans-serif;
 	font-size: 10px;
+
 }
 
 body {
 	margin: 0px;
 	padding: 0px;
 	border: 0px;
+	position: relative;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 14px;
 	line-height: 1.42857143;
@@ -40,9 +51,18 @@ header h4 {
 .gold-bg {
 	height: auto;
 	padding: 20px;
-	background-color: rgba(227, 207, 120, 0.8);
+	background-color: rgba(227, 207, 120, 0.9);
 	border-radius: 5px;
 	color: rgba(245, 255, 250, 0.8);
+}
+
+section.gold-bg {
+	margin-top: 20px;
+}
+
+section.gold-bg iframe {
+	margin: 0px auto;
+  	display: block;
 }
 
 nav.gold-bg {
@@ -77,8 +97,32 @@ nav.gold-bg ul li a:hover {
 	}
 
 	.gold-bg {
-		width: 320px;
+		width: 355px;
 		margin: 10px 0px 0px 15%;
+	}
+
+	section.gold-bg {
+		margin: 0px;
+		position: absolute;
+		top: 10px;
+		left: 590px;
+		width: auto;
+		min-width: 540px;
+		max-width: 710px;
+	}
+
+	section h2 {
+		font-size: 44px;
+		font-family: arial-bold;
+		margin: 0px;
+	}
+
+	section p {
+		font-size: 18px;
+	}
+
+	section iframe.mobile {
+		display: none;
 	}
 }
 
