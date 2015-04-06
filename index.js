@@ -1,7 +1,7 @@
 var express = require('express');
 var http = require('http');
 var expressHbs = require('express3-handlebars');
-var compressor = require('node-minify');
+// var compressor = require('node-minify');
 var favicon = require('serve-favicon');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
@@ -39,11 +39,11 @@ function start() {
 	//});
 
 	// Using Clean-css for CSS 
-	new compressor.minify({
-	    type: 'clean-css',
-	    fileIn: 'publics/css/**/**.css',
-	    fileOut: 'public/css/base-min-cleancss.css'
-	});
+	// new compressor.minify({
+	//     type: 'clean-css',
+	//     fileIn: 'publics/css/**/**.css',
+	//     fileOut: 'public/css/base-min-cleancss.css'
+	// });
 
 	app.get('/', routes.index);
 	app.get('/venue', routes.venue);
