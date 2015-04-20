@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<title>Alan &amp; Hillary | Wedding</title>
 		<link href='http://fonts.googleapis.com/css?family=Cantarell:400,400italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="/css/main.css"/>
@@ -14,17 +15,35 @@
 				<h4>Snohomish, WA</h4>
 			</header>
 			<nav class="gold-bg">
-				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="/venue">Venue</a></li>
-					<li><a href="/events">Events</a></li>
-					<li><a href="/registry">Registry</a></li>
-					<li><a href="/engagement">Engagement</a></li>
+				<ul class="nav-list">
+					<li class="nav-list-item"><a href="#">Menu </a></li>
+					<li class="nav-list-item"><a href="/">Home</a></li>
+					<li class="nav-list-item"><a href="/venue">Venue</a></li>
+					<li class="nav-list-item"><a href="/events">Events</a></li>
+					<li class="nav-list-item"><a href="/registry">Registry</a></li>
+					<li class="nav-list-item"><a href="/engagement">Engagement</a></li>
 				</ul>
 			</nav>
 			<section class="gold-bg">
 				{{{body}}}
 			</section>
 		</div>
+		<script type='text/javascript' id="__bs_script__">//<![CDATA[
+		    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.6.4.js'><\/script>".replace("HOST", location.hostname));
+		//]]></script>
+		<script type="text/javascript">
+			window.document.addEventListener("DOMContentLoaded", function(event) {
+				var navItems = window.document.getElementsByClassName('nav-list-item');
+				navItems[0].addEventListener('click', function() {
+					var navItems = window.document.getElementsByClassName('nav-list-item');
+					Array.prototype.map.call(navItems, function(obj, index) {
+						if(index !== 0) {
+							// obj.style.display === 'block' ? obj.style.display = 'none' : obj.style.display = 'block';
+							obj.className = obj.className.indexOf('show') !== -1 ? obj.className.replace( /(?:^|\s)show(?!\S)/ , '' ) : obj.className + ' show';
+						}
+					});
+				});
+			});
+		</script>
 	</body>
 </html>

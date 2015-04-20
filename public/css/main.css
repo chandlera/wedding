@@ -79,6 +79,7 @@ header h4 {
 	background-color: rgba(227, 207, 120, 0.9);
 	border-radius: 5px;
 	color: rgba(245, 255, 250, 0.8);
+	display: block;
 }
 
 section.gold-bg {
@@ -87,7 +88,8 @@ section.gold-bg {
 
 section.gold-bg iframe {
 	margin: 0px auto;
-  	display: block;
+	width: 100%;
+	height: 240px;
 }
 
 nav.gold-bg {
@@ -96,21 +98,47 @@ nav.gold-bg {
 
 nav.gold-bg ul {
 	margin: 0px;
-	padding: 0px;
+	padding: 0px;	
 }
 
 nav.gold-bg ul li {
+	display: none;
+}
+
+nav.gold-bg ul li.show {
+	opacity: 1;
+    display: block;
+}
+
+nav.gold-bg ul li:hover {
+	background-color: rgba(150, 199, 110, 1);
+}
+
+nav.gold-bg ul li:first-child {
 	display: block;
+	height: 26px;
+}
+
+nav.gold-bg ul li:first-child:hover {
+	background-color: transparent;
+}
+
+nav.gold-bg ul li:first-child:after {
+   content: ' ▾';
+	position: relative;
+	top: -24px;
+	right: -60px;
 }
 
 nav.gold-bg ul li a {
 	text-decoration: none;
 	font-size: 20px;
 	color: rgba(245, 255, 250, 0.8);
+	display: block;
 }
 
 nav.gold-bg ul li a:hover {
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .registry-list {
@@ -138,6 +166,10 @@ nav.gold-bg ul li a:hover {
 	margin: 10px 0px;
 	background-color: rgba(150, 199, 110, 1);
 	padding: 4px;
+}
+
+section.gold-bg {
+	position: relative;
 }
 
 @media(min-width: 768px) {
@@ -186,6 +218,20 @@ nav.gold-bg ul li a:hover {
 		max-width: 50%;
 	}
 
+	nav.gold-bg ul li:first-child {
+		display: none;
+	}
+
+	nav.gold-bg ul li {
+		display: block;
+	}
+
+	section.gold-bg iframe {
+		margin: 0px auto;
+		width: 560px;
+		height: 315px;
+	}
+
 	section h2 {
 		font-size: 44px;
 		font-family: arial-bold;
@@ -194,10 +240,6 @@ nav.gold-bg ul li a:hover {
 
 	section p {
 		font-size: 18px;
-	}
-
-	section iframe.mobile {
-		display: none;
 	}
 }
 

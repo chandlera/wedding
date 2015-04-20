@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var errorhandler = require('errorhandler');
 var throng = require('throng');
+var browserSync = require('browser-sync');
 
 var routes = require('./routes');
 var app = express();
@@ -52,7 +53,11 @@ function start() {
 	app.get('/engagement', routes.engagement);
 
 	http.createServer(app).listen(app.get('port'), function() {
-	  console.log('Express server listening on port ' + app.get('port'));
+		console.log('Express server listening on port ' + app.get('port'));
+		browserSync({
+			proxy: 'localhost:' + app.get('port'),
+			files: ['public/**/*.{js,css}']
+		});
 	});
 }
 
