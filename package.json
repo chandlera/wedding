@@ -4,7 +4,7 @@
   "description": "Website for Hillary Kapustka and Alan Chandler's wedding.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "npm install && node index.js"
   },
   "repository": "https://github.com/chandlera/weddin",
   "author": "Alan Chandler",

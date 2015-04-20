@@ -9,7 +9,7 @@
 
 html {
 	font-size: 10px;
-	font-family: 'Cantarell', sans-serif;
+	font-family: sans-serif;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
 	padding: 0px;
 	border: 0px;
 	position: relative;
-	font-family: 'Cantarell', sans-serif;
+	font-family: sans-serif;
 	font-size: 14px;
 	line-height: 1.42857143;
 	color: #333;
@@ -55,7 +55,7 @@ h6 {
 	margin: 0px auto;
 	height: 100vh;
 	width: 100%;
-	background-image: url('../images/indoor.jpg');
+	background-image: url('../images/indoor-min.jpg');
 	background-repeat: no-repeat;
 	background-size: 812px 488px;
   	background-position: center top;
