@@ -17,3 +17,7 @@ exports.weddingEvents = function (req, res) {
 exports.engagement = function (req, res) {
     res.render('engagement', { title: 'Engagement Photos' });
 };
+
+exports.filter = function (req, res) {
+    res.render('filter', { title: 'Filters' });
+};

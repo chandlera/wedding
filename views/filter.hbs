@@ -1,0 +1,43 @@
+<script>
+  var head = document.head
+    , link = document.createElement('link')
+
+  link.type = 'text/css'
+  link.rel = 'stylesheet'
+  link.href = '/css/filter.css'
+
+  head.appendChild(link)
+</script>
+<div class="filters"></div>
+<div id="editor-footer">
+  <select value="">
+    <option value="">Select</option>
+  </select>
+  <button id="add-filter">Add</button>
+</div>
+</div>
+
+<img src="http://dibaiee.ir/img/butterfly.jpg" />
+
+<div class="drop-here" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true"></div>
+
+<script src="/js/shim.js"></script>
+<script src="/js/filter.js"></script>
+<script src="/js/upload.js"></script>
+<script>
+  Array.prototype.map.call(document.getElementsByClassName("gold-bg"), function(obj) {obj.style.display="none"});
+  document.getElementById("content").style.backgroundImage = "url('')";
+  document.getElementById("content").style.height = "auto";
+
+  var img = document.querySelector("img");
+  var container = document.getElementById("content");
+  var widget = new CSSFilterEditorWidget(container, "blur(2px) contrast(2) brightness(2)");
+
+  img.style.filter = widget.getCssValue();
+  img.style.webkitFilter = widget.getCssValue();
+
+  widget._onChange = function(css) {
+    img.style.filter = css;
+    img.style.webkitFilter = css;
+  };
+</script>

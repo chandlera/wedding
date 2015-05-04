@@ -36,6 +36,7 @@ function start() {
 	app.get('/events', routes.weddingEvents);
 	app.get('/registry', routes.registry);
 	app.get('/engagement', routes.engagement);
+	app.get('/filter', routes.filter);
 
 	http.createServer(app).listen(app.get('port'), function() {
 		console.log('Express server listening on port ' + app.get('port'));
