@@ -33,6 +33,7 @@ function start() {
 
 	app.get('/', routes.index);
 	app.get('/venue', routes.venue);
+	app.get('/accommodations', routes.accommodations);
 	app.get('/events', routes.weddingEvents);
 	app.get('/registry', routes.registry);
 	app.get('/engagement', routes.engagement);

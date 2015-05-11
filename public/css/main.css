@@ -168,6 +168,22 @@ nav.gold-bg ul li a:hover {
 	padding: 4px;
 }
 
+.alert {
+	background-color: rgba(150, 199, 110, 1);
+	border-radius: 10px;
+	padding: 30px;
+	text-align: center;
+	color: red;
+}
+
+.alert a {
+	color: white;
+}
+
+.alert a:hover { 
+	color: gold;
+}
+
 section.gold-bg {
 	position: relative;
 }

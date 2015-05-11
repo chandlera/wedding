@@ -6,6 +6,10 @@ exports.venue = function (req, res) {
     res.render('venue', { title: 'Venue' });
 };
 
+exports.accommodations = function (req, res) {
+    res.render('accommodations', { title: 'Accommodations' });
+};
+
 exports.registry = function (req, res) {
     res.render('registry', { title: 'Registry' });
 };
