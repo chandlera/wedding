@@ -1,13 +1,13 @@
+var path = require("path");
+
 var express = require('express');
 var http = require('http');
-var expressHbs = require('express3-handlebars');
-var favicon = require('serve-favicon');
+var { engine } = require('express-handlebars');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
 var errorhandler = require('errorhandler');
 var throng = require('throng');
-// var browserSync = require('browser-sync');
+const helmet = require("helmet");
 
 var routes = require('./routes');
 var app = express();
@@ -20,11 +20,14 @@ throng(start, {
 });
 
 function start() {
-	app.engine('hbs', expressHbs({extname:'hbs', defaultLayout:'main.hbs'}));
-	app.set('view engine', 'hbs');
-	app.set('port', process.env.PORT || 7001);
+	app.engine('handlebars', engine({extname: '.hbs', layoutsDir: path.resolve(__dirname, './views/layouts')}));
+	app.set('view engine', 'handlebars');
+	app.set("views", path.resolve(__dirname, "./views"));
+
+	app.set('port', process.env.PORT || 7002);
 	app.use(express.static(__dirname + '/public'));
 	app.use(morgan('combined'));
+	app.use(helmet());
 
 	if (process.env.NODE_ENV === 'development') {
 	  // only use in development 
@@ -41,10 +44,6 @@ function start() {
 
 	http.createServer(app).listen(app.get('port'), function() {
 		console.log('Express server listening on port ' + app.get('port'));
-		// browserSync({
-		// 	proxy: 'localhost:' + app.get('port'),
-		// 	files: ['public/**/*.{js,css}']
-		// });
 	});
 }
 
